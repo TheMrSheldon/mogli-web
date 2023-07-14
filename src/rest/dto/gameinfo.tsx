@@ -1,11 +1,11 @@
-export interface GameInfoMedia {
+export type GameInfoMedia = {
 	icon: string,
 	logo: string,
 	boxart: string,
 	banner: string,
 }
 
-export default interface GameInfo {
+export type GameInfo = {
 	id: string,
 	title: string,
 	media: GameInfoMedia,
