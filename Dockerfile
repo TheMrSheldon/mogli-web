@@ -10,6 +10,7 @@ RUN npm ci --legacy-peer-deps
 COPY tsconfig.json tsconfig.json
 COPY public/ public
 COPY src/ src
+COPY .env.production .env.production
 RUN npm run build
 
 

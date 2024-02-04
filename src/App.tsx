@@ -7,12 +7,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
 
-import GameView from "./features/game/view";
-import HomeView from "./features/home/view";
-import NoPageView from "./features/nopage/view";
-import UserView from "./features/user/view";
-import LibraryView from "./features/library/view";
+import GameView from "./features/game/view"
+import HomeView from "./features/home/view"
+import NoPageView from "./features/nopage/view"
+import UserView from "./features/user/view"
+import LibraryView from "./features/library/view"
 import SettingsView from "./features/settings/view"
+import ImportView from "./features/import/view"
 import SideBar, { DrawerHeader } from './components/sidebar';
 import AppBar from './components/appbar'
 import { apiSlice } from './rest/apiSlice'
@@ -56,6 +57,7 @@ export default function App() {
               <Route path="settings" element={<SettingsView />} />
               <Route path="users/:id" element={<UserView />} />
               <Route path="games/:id" element={<GameView />} />
+              <Route path="import" element={<ImportView />} />
               <Route path="*" element={<NoPageView />} />
             </Routes>
           </Box>

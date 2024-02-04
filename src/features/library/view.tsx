@@ -25,7 +25,7 @@ function GameCard(props: GameCardProps) {
 				<CardMedia
 					component="img"
 					height="140"
-					image={props.gameinfo.media.logo}
+					image={process.env.REACT_APP_API_ENDPOINT+props.gameinfo.media.logo}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">

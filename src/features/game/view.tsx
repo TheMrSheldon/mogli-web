@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 const BannerImage = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'game',
 })<{ game: GameInfo }>(({ theme, game }) => ({
-  backgroundImage: `linear-gradient(to top, #202020 0%, transparent 50%), url(${game.media.banner})`,
+  backgroundImage: `linear-gradient(to top, #202020 0%, transparent 50%), url(${process.env.REACT_APP_API_ENDPOINT+game.media.banner})`,
   height: "50vh",
   width: "100%",
   backgroundPosition: "center",
@@ -33,7 +33,7 @@ const BoxartImage = styled("img")(({ theme }) => ({
 
 const GameInfoView = (props: GameInfoViewProps) => {
   return <Box maxWidth="lg" mt={`calc(-${boxartHeight}/2)`} display="grid" sx={{ gridTemplateAreas: "'boxart title' 'boxart tags'", gridTemplateColumns: "max-content 1fr", gridTemplateRows: "1fr 1fr", gridGap: "10pt" }}>
-    <BoxartImage src={props.game.media.boxart} sx={{ gridArea: "boxart", boxShadow: "0pt 0pt 10pt #101010" }} />
+    <BoxartImage src={process.env.REACT_APP_API_ENDPOINT+props.game.media.boxart} sx={{ gridArea: "boxart", boxShadow: "0pt 0pt 10pt #101010" }} />
     <Box alignSelf="end">
       <Typography variant="h3" noWrap component="div" sx={{ gridArea: "title" }}>
         {props.game.title}
